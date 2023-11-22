@@ -10,3 +10,6 @@ function selectionSort(array) {
     }
     return array;
 }
+
+const temp = selectionSort([1, 3, -3, 5, 6, 4, -32, -2, 34, 2, 0])
+console.log('temp', temp)
