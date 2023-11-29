@@ -4,9 +4,6 @@ function bubbleSort(array) {
         isSorted = true;
         for (let i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
-                // let temp = arr[j];
-                // arr[j] = arr[j + 1];
-                // arr[j + 1] = temp;
                 [array[i], array[i + 1]] = [array[i + 1], array[i]];
                 isSorted = false;
             }
