@@ -1,5 +1,5 @@
 function merge(left, right) {
-    const sortedArr = [];
+    let sortedArr = []
     while (left.length && right.length) {
         if (left[0] < right[0]) {
             sortedArr.push(left.shift());
@@ -7,17 +7,18 @@ function merge(left, right) {
             sortedArr.push(right.shift());
         }
     }
-    return [...sortedArr, ...left, ...right]
+    return [...sortedArr, ...left, ...right];
 }
 
-function mergeSort(arr) {
-    if (arr.length <= 1) return arr
+function MergeSort(arr) {
+    if (arr.length <= 1) return arr;
     let mid = Math.floor(arr.length / 2);
-    let left = mergeSort(arr.slice(0, mid));
-    let right = mergeSort(arr.slice(mid));
-    return merge(left, right)
+    let left = MergeSort(arr.slice(0, mid));
+    let right = MergeSort(arr.slice(mid));
+    return merge(left, right);
 }
 
-const temp = mergeSort([0, 9, 8, 7, 6, 5, 4, 3, 2, 1, -1, -2,])
 
+
+let temp = MergeSort([1, 4, 6, 2, 6, 7, 23, -1]);
 console.log('temp', temp)
